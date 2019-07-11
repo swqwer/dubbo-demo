@@ -23,6 +23,9 @@ public class HouseController {
 
 	@RequestMapping("/getServerTime")
 	public String getServerTime(){
+		//获取服务器时间
 		return String.valueOf(System.nanoTime());
 	}
+
+
 }
