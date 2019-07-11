@@ -25,9 +25,4 @@ public class HouseController {
 	public String getServerTime(){
 		return String.valueOf(System.nanoTime());
 	}
-
-    @RequestMapping("/getWeather")
-    public String getWeather(){
-	    return "sun";
-    }
 }
