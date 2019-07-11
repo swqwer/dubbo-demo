@@ -20,4 +20,9 @@ public class HouseController {
 	public String getHouse(String id){
 		return houseService.findOneHouse(id).toString();
 	}
+
+	@RequestMapping("/getServerTime")
+	public String getServerTime(){
+		return String.valueOf(System.nanoTime());
+	}
 }
