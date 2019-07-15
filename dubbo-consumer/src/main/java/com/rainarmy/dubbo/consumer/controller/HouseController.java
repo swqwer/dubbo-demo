@@ -27,5 +27,7 @@ public class HouseController {
 		return String.valueOf(System.nanoTime());
 	}
 
-
+	private void print(){
+		System.out.println("i am a print");
+	}
 }
