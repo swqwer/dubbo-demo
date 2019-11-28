@@ -8,12 +8,12 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>common-util</artifactId>
     <properties>
         <commons-lang3.version>3.8.1</commons-lang3.version>
         <!-- Plugin的属性 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <artifactId>common-util</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -21,7 +21,4 @@
             <version>${commons-lang3.version}</version>
         </dependency>
     </dependencies>
-
-
-
 </project>
