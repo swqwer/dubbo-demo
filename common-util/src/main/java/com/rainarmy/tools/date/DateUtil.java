@@ -18,17 +18,17 @@ import java.util.concurrent.TimeUnit;
  *
  *  注意：
  *
- *  如果使用LocalDate类型去操作时分秒，则会出现异常
+ *  1.如果使用LocalDate类型去操作时分秒，则会出现异常
  *
- *  或者使用LocalTime类型去操作日期，则会出现异常
+ *  2.或者使用LocalTime类型去操作日期，则会出现异常
  *
- *  LocalTime转化为具有时分秒的时间格式时，会自动补全为格林威治时间的时间（00：00：00）
+ *  3.LocalTime转化为具有时分秒的时间格式时，会自动补全为格林威治时间的时间（00：00：00）
  *
- *  LocalTime转化为具有年月日的时间格式时，会自动补全为格林威治时间的日期（1970：01：01）
+ *  4.LocalTime转化为具有年月日的时间格式时，会自动补全为格林威治时间的日期（1970：01：01）
  *
- *  如果准备获取两个日期间的微秒差/纳秒差时，请考虑到会出现long类型溢出
+ *  5.如果准备获取两个日期间的微秒差/纳秒差时，请考虑到会出现long类型溢出
  *
- *  取日差的时候是根据日数进行判断，即2000-01-01 23:59:59 和2000-01-02 00:00:00虽然差了1秒但是也差了1日
+ *  6.取日差的时候是根据日数进行判断，即2000-01-01 23:59:59 和2000-01-02 00:00:00虽然差了1秒但是也差了1日
  * @author wangchengjun
  * @version V1.0
  * @date 2020/5/30 15:18
@@ -48,6 +48,12 @@ public class DateUtil {
 
     private static String PATTERN_HH_MM_DD = "HH:mm:ss";
 
+    private static String PATTERN_HH_MM = "HH:mm";
+
+    private static String PATTERN_YY = "yy";
+
+    private static String PATTERN_YYYY_MM_DD_HH_MM_SS_UNDERLINE = "yyyy-MM-dd_HH:mm:ss";
+
     private static ZoneId ZONE = ZoneId.of("Asia/Shanghai");
 
     public static DateTimeFormatter YYYY_MM_DD_HH_MM_SS_SSS = DateTimeFormatter.ofPattern(PATTERN_YYYY_MM_DD_HH_MM_SS_SSS).withZone(ZONE);
@@ -63,6 +69,12 @@ public class DateUtil {
     public static DateTimeFormatter HHMMDD = DateTimeFormatter.ofPattern(PATTERN_HHMMDD).withZone(ZONE);
 
     public static DateTimeFormatter HH_MM_DD = DateTimeFormatter.ofPattern(PATTERN_HH_MM_DD).withZone(ZONE);
+
+    public static DateTimeFormatter HH_MM = DateTimeFormatter.ofPattern(PATTERN_HH_MM).withZone(ZONE);
+
+    public static DateTimeFormatter YY = DateTimeFormatter.ofPattern(PATTERN_YY).withZone(ZONE);
+
+    public static DateTimeFormatter YYYY_MM_DD_HH_MM_SS_UNDERLINE = DateTimeFormatter.ofPattern(PATTERN_YYYY_MM_DD_HH_MM_SS_UNDERLINE).withZone(ZONE);
 
     public static final LocalDate GREENWICH_MEAN_TIME= LocalDate.of(1970,1,1);
     /**
